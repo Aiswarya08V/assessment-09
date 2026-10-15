@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickBites | Online Food Ordering Portal</title>
+    <style>
+        body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; background-color: #f8f9fa; color: #333; }
+        header { background-color: #d9534f; color: white; padding: 20px; text-align: center; font-size: 26px; font-weight: bold; }
+        nav { display: flex; justify-content: center; background: #c9302c; padding: 10px; }
+        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
+        .container { max-width: 1200px; margin: 20px auto; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .section { margin-bottom: 30px; }
+        h2 { color: #d9534f; border-bottom: 2px solid #f0ad4e; padding-bottom: 5px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .card { background: #fff; padding: 15px; border-radius: 6px; border: 1px solid #ddd; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
+        .price { font-weight: bold; color: #5cb85c; font-size: 1.1em; }
+        .promo { background: #f0ad4e; color: white; padding: 15px; border-radius: 6px; text-align: center; font-weight: bold; }
+        .footer-message { background: #f1f1f1; padding: 15px; text-align: center; margin-top: 20px; font-weight: bold; border-radius: 6px; }
+    </style>
+</head>
+<body>
+
+    <header>🍔 QuickBites Express | Food Delivery Portal</header>
+    
+    <nav>
+        <a href="#categories">Categories</a>
+        <a href="#menu">Menu Items</a>
+        <a href="#offers">Promotions</a>
+    </nav>
+
+    <div class="container">
+        <!-- Environment Banner -->
+        <div style="text-align: right; margin-bottom: 15px;">
+            <span style="padding: 5px 10px; background: #5cb85c; color: white; border-radius: 4px;">Release: Stable (v1.0.0)</span>
+        </div>
+
+        <section id="categories" class="section">
+            <h2>🍕 Food Categories</h2>
+            <p>Explore Gourmet Burgers, Authentic Wood-Fired Pizzas, Fresh Salads, and Signature Desserts.</p>
+        </section>
+
+        <section id="menu" class="section">
+            <h2>📋 Menu & Availability</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Classic Cheeseburger</h3>
+                    <p>Prime beef patty, cheddar, secret house sauce, brioche bun.</p>
+                    <p class="price">$12.99 <span style="font-size: 0.8em; color: #5cb85c;">(Available)</span></p>
+                </div>
+                <div class="card">
+                    <h3>Spicy Pepperoni Pizza</h3>
+                    <p>Mozzarella, pepperoni cups, hot honey drizzle, fresh basil.</p>
+                    <p class="price">$16.50 <span style="font-size: 0.8em; color: #5cb85c;">(Available)</span></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="offers" class="section">
+            <h2>🎉 Promotional Offers</h2>
+            <div class="promo">
+                ⚡ FLASH DEAL: Use code BOGO50 to get 50% off your second pizza tonight!
+            </div>
+        </section>
+
+        <!-- Placeholder for Step 10 Modification -->
+        <div id="dynamic-addition"></div>
+    </div>
+
+</body>
+</html>
