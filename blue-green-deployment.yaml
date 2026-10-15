@@ -1,0 +1,75 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: food-portal-blue
+  labels:
+    app: food-portal
+    env: blue
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: food-portal
+      env: blue
+  template:
+    metadata:
+      labels:
+        app: food-portal
+        env: blue
+    spec:
+      containers:
+      - name: food-portal
+        image: DOCKERHUB_USERNAME/food-portal:v1.0.0
+        ports:
+        - containerPort: 80
+        livenessProbe:
+          httpGet:
+            path: /index.html
+            port: 80
+          initialDelaySeconds: 5
+          periodSeconds: 10
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: food-portal-green
+  labels:
+    app: food-portal
+    env: green
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: food-portal
+      env: green
+  template:
+    metadata:
+      labels:
+        app: food-portal
+        env: green
+    spec:
+      containers:
+      - name: food-portal
+        image: DOCKERHUB_USERNAME/food-portal:v1.0.0
+        ports:
+        - containerPort: 80
+        livenessProbe:
+          httpGet:
+            path: /index.html
+            port: 80
+          initialDelaySeconds: 5
+          periodSeconds: 10
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: food-portal-service
+spec:
+  type: NodePort
+  selector:
+    app: food-portal
+    env: blue # Controls active routing (switches between blue/green)
+  ports:
+    - port: 80
+      targetPort: 80
+      nodePort: 32100
